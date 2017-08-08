@@ -22,6 +22,30 @@
         <activity android:name=".MainActivity">
 
         </activity>
+        <activity
+            android:name=".NavDrawer"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActionBarDemoActivity"
+            android:label="@string/action_bar_demo_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/OverlayActionBarTheme"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="actionbar"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MarkerCloseInfoWindowOnRetapDemoActivity"
+            android:label="@string/marker_close_info_window_on_retap_demo_label">
+        </activity>
 
         <service
             android:name=".SensorService"
@@ -45,16 +69,7 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".NavDrawer"
-            android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

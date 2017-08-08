@@ -19,7 +19,9 @@ package com.example.admin.geofencelocation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 
+import com.google.android.gms.location.Geofence;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
@@ -29,6 +31,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This shows how to close the info window when the currently selected marker is re-tapped.
@@ -55,10 +60,25 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.marker_close_info_window_on_retap_demo);
+        // tamamlanacak getGeofenceTrasitionDetails(Geofence.GEOFENCE_TRANSITION_ENTER,);
+
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         new OnMapAndViewReadyListener(mapFragment, this);
+    }
+
+    private String getGeofenceTrasitionDetails(int geoFenceTransition, List<Geofence> triggeringGeofences) {
+        // get the ID of each geofence triggered
+        ArrayList<String> triggeringGeofencesList = new ArrayList<>();
+        for (Geofence geofence : triggeringGeofences) {
+            triggeringGeofencesList.add(geofence.getRequestId());
+        }
+
+        String status = "Entering into Geofence";
+        if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER)
+            System.out.println(status);
+        return status + TextUtils.join(", ", triggeringGeofencesList);
     }
 
     @Override
@@ -98,6 +118,7 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
                 .title("Brisbane")
                 .snippet("Population: 2,074,200"));
 
+
         mMap.addMarker(new MarkerOptions()
                 .position(SYDNEY)
                 .title("Sydney")
@@ -109,11 +130,14 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
                 .snippet("Population: 4,137,400"));
 
         mMap.addMarker(new MarkerOptions()
+
                 .position(PERTH)
                 .title("Perth")
                 .snippet("Population: 1,738,800"));
 
+
         mMap.addMarker(new MarkerOptions()
+
                 .position(ADELAIDE)
                 .title("Adelaide")
                 .snippet("Population: 1,213,000"));

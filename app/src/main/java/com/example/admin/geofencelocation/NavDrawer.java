@@ -81,7 +81,7 @@ public class NavDrawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_search) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
@@ -90,10 +90,11 @@ public class NavDrawer extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_track) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_area) {
+            Intent intent = new Intent(this, MarkerCloseInfoWindowOnRetapDemoActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -103,8 +103,8 @@ public class GeofenceReciever extends BroadcastReceiver {
 
         Log.i(TAG, "sendNotification: " + msg);
 
-
-        Intent notificationIntent = new Intent(contextBootReceiver, MainActivity.class);
+        //burası bildirimin gideceği yeri belirliyor
+        Intent notificationIntent = new Intent(contextBootReceiver, MarkerCloseInfoWindowOnRetapDemoActivity.class);
         notificationIntent.putExtra(MainActivity.NOTIFICATION_MSG, msg);
 
 
