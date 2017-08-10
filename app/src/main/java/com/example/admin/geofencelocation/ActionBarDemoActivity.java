@@ -19,6 +19,7 @@ package com.example.admin.geofencelocation;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -72,7 +73,11 @@ public class ActionBarDemoActivity extends YouTubeFailureRecoveryActivity implem
     player.setOnFullscreenListener(this);
 
     if (!wasRestored) {
-      player.cueVideo("9c6W4CCU9M4");
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("gonder");
+
+      player.cueVideo(message);
     }
   }
 

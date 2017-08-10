@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MarkerCloseInfoWindowOnRetapDemoActivity"
+            android:name=".TrabzonMap"
             android:label="@string/marker_close_info_window_on_retap_demo_label">
         </activity>
 

@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * This shows how to close the info window when the currently selected marker is re-tapped.
  */
-public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity implements
+public class RizeMap extends AppCompatActivity implements
         OnMarkerClickListener,
         OnMapClickListener,
         OnMapAndViewReadyListener.OnGlobalLayoutAndMapReadyListener {
@@ -59,7 +59,7 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.marker_close_info_window_on_retap_demo);
+        setContentView(R.layout.rizemaplay);
         // tamamlanacak getGeofenceTrasitionDetails(Geofence.GEOFENCE_TRANSITION_ENTER,);
 
 
@@ -100,7 +100,7 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
         // Override the default content description on the view, for accessibility mode.
         // Ideally this string would be localized.
         map.setContentDescription("Demo showing how to close the info window when the currently"
-            + " selected marker is re-tapped.");
+                + " selected marker is re-tapped.");
 
         LatLngBounds bounds = new LatLngBounds.Builder()
                 .include(PERTH)
@@ -113,7 +113,7 @@ public class MarkerCloseInfoWindowOnRetapDemoActivity extends AppCompatActivity 
     }
 
     private void addMarkersToMap() {
-       mMap.addMarker(new MarkerOptions()
+        mMap.addMarker(new MarkerOptions()
                 .position(BRISBANE)
                 .title("Brisbane")
                 .snippet("Population: 2,074,200"));

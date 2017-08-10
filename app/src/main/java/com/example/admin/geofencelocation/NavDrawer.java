@@ -82,7 +82,7 @@ public class NavDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_search) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, TrabzonMap.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
 
@@ -93,7 +93,7 @@ public class NavDrawer extends AppCompatActivity
         } else if (id == R.id.nav_track) {
 
         } else if (id == R.id.nav_area) {
-            Intent intent = new Intent(this, MarkerCloseInfoWindowOnRetapDemoActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
 

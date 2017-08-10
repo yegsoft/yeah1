@@ -13,20 +13,13 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofenceStatusCodes;
 import com.google.android.gms.location.GeofencingEvent;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by ADMIN on 4/19/2017.
@@ -104,7 +97,7 @@ public class GeofenceReciever extends BroadcastReceiver {
         Log.i(TAG, "sendNotification: " + msg);
 
         //burası bildirimin gideceği yeri belirliyor
-        Intent notificationIntent = new Intent(contextBootReceiver, MarkerCloseInfoWindowOnRetapDemoActivity.class);
+        Intent notificationIntent = new Intent(contextBootReceiver, TrabzonMap.class);
         notificationIntent.putExtra(MainActivity.NOTIFICATION_MSG, msg);
 
 
