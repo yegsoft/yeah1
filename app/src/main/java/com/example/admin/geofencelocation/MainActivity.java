@@ -169,6 +169,22 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         GeofencingRequest geofenceRequest = createGeofenceRequest(geofence);
         addGeofence(geofenceRequest);
 
+        geofence = createGeofence2();
+        geofenceRequest = createGeofenceRequest(geofence);
+        addGeofence(geofenceRequest);
+
+        geofence = createGeofence3();
+        geofenceRequest = createGeofenceRequest(geofence);
+        addGeofence(geofenceRequest);
+
+        geofence = createGeofence4();
+        geofenceRequest = createGeofenceRequest(geofence);
+        addGeofence(geofenceRequest);
+
+        geofence = createGeofence5();
+        geofenceRequest = createGeofenceRequest(geofence);
+        addGeofence(geofenceRequest);
+
     }
 
 
@@ -178,14 +194,46 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     // Create a Geofence
     private Geofence createGeofence() {
-        Log.d(TAG, "createGeofence");
-
-        //double la = Double.parseDouble(pref.getString("latitude",""));
-        //double lo = Double.parseDouble(pref.getString("longitude",""));
 
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
-                .setCircularRegion(18.445692, 73.867776, GEOFENCE_RADIUS)
+                .setCircularRegion(41.022099, 39.570160, GEOFENCE_RADIUS)
+                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
+                .build();
+    }
+    private Geofence createGeofence2() {
+
+        return new Geofence.Builder()
+                .setRequestId(GEOFENCE_REQ_ID)
+                .setCircularRegion(40.911715, 40.118717, GEOFENCE_RADIUS)
+                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
+                .build();
+    }
+    private Geofence createGeofence3() {
+
+        return new Geofence.Builder()
+                .setRequestId(GEOFENCE_REQ_ID)
+                .setCircularRegion(40.814207, 39.610737, GEOFENCE_RADIUS)
+                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
+                .build();
+    }
+    private Geofence createGeofence4() {
+
+        return new Geofence.Builder()
+                .setRequestId(GEOFENCE_REQ_ID)
+                .setCircularRegion(40.886064, 39.290843, GEOFENCE_RADIUS)
+                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
+                .build();
+    }
+    private Geofence createGeofence5() {
+
+        return new Geofence.Builder()
+                .setRequestId(GEOFENCE_REQ_ID)
+                .setCircularRegion(40.687377, 39.480178, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
                 .build();

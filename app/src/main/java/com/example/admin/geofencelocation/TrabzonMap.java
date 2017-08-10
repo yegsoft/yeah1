@@ -47,6 +47,7 @@ public class TrabzonMap extends AppCompatActivity implements
         OnMapAndViewReadyListener.OnGlobalLayoutAndMapReadyListener {
 
     String track;
+
     private static final LatLng AKCAABAT = new LatLng(41.022099, 39.570160);
     private static final LatLng SURMENE = new LatLng(40.911715, 40.118717);
     private static final LatLng MACKA = new LatLng(40.814207, 39.610737);
@@ -120,14 +121,12 @@ public class TrabzonMap extends AppCompatActivity implements
                 .snippet("t6hNicK_OdQ"));
 
         mMap.addMarker(new MarkerOptions()
-
                 .position(HAMSIKOY)
                 .title("Hamsiköy")
                 .snippet("pQsZ4homq-Q"));
 
 
         mMap.addMarker(new MarkerOptions()
-
                 .position(TONYA)
                 .title("Tonya")
                 .snippet("hneU6fj0V5M"));
@@ -144,10 +143,12 @@ public class TrabzonMap extends AppCompatActivity implements
     public boolean onMarkerClick(final Marker marker) {
         // The user has re-tapped on the marker which was already showing an info window.
         if (marker.equals(mSelectedMarker)) {
+
             track=marker.getSnippet();
+
+
             Intent in = new Intent(this, ActionBarDemoActivity.class);
             String intToSend = track;
-            Log.d("KontrolTtack",""+track);
             in.putExtra("gonder", intToSend);
             startActivity(in);
             mSelectedMarker = null;
