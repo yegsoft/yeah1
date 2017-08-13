@@ -91,14 +91,20 @@ public class GeofenceReciever extends BroadcastReceiver {
         return status + TextUtils.join(", ", triggeringGeofencesList);
     }
 
+
+
+
     private void sendNotification(String msg) {
 
 
         Log.i(TAG, "sendNotification: " + msg);
 
         //burası bildirimin gideceği yeri belirliyor
-        Intent notificationIntent = new Intent(contextBootReceiver, TrabzonMap.class);
-        notificationIntent.putExtra(MainActivity.NOTIFICATION_MSG, msg);
+        Intent notificationIntent = new Intent(contextBootReceiver, ActionBarDemoActivity.class);
+        notificationIntent.putExtra("gonder", MainActivity.NOTIFICATION_MSG);
+
+
+
 
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(contextBootReceiver);

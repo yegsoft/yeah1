@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         return ctx;
     }
 
+
+
     private Location lastLocation;
-    public static final String NOTIFICATION_MSG = "NOTIFICATION MSG";
+    public static String NOTIFICATION_MSG = "NOTIFICATION MSG";
 
     GoogleApiClient googleApiClient;
     private static final String TAG = "GeofenceLocation";
@@ -195,6 +197,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     // Create a Geofence
     private Geofence createGeofence() {
 
+        NOTIFICATION_MSG = "jiYkUaJMW6U";
+
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
                 .setCircularRegion(41.022099, 39.570160, GEOFENCE_RADIUS)
@@ -203,6 +207,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 .build();
     }
     private Geofence createGeofence2() {
+
+        NOTIFICATION_MSG = "t6hNicK_OdQ";
 
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
@@ -213,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence3() {
 
+        NOTIFICATION_MSG = "yekyXM7tO34";
+
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
                 .setCircularRegion(40.814207, 39.610737, GEOFENCE_RADIUS)
@@ -221,6 +229,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 .build();
     }
     private Geofence createGeofence4() {
+
+        NOTIFICATION_MSG = "hneU6fj0V5M";
 
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
@@ -231,12 +241,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence5() {
 
+        NOTIFICATION_MSG = "pQsZ4homq-Q";
+
+
         return new Geofence.Builder()
-                .setRequestId(GEOFENCE_REQ_ID)
+                .setRequestId("deneme")
                 .setCircularRegion(40.687377, 39.480178, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
                 .build();
+
+
     }
 
     // Create a Geofence Request
