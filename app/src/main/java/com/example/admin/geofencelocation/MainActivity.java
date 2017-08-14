@@ -1,6 +1,7 @@
 package com.example.admin.geofencelocation;
 
 import android.app.ActivityManager;
+import android.app.DownloadManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         if (!isMyServiceRunning(mSensorService.getClass())) {
             startService(mServiceIntent);
         }
+
+
+
     }
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
@@ -197,10 +201,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     // Create a Geofence
     private Geofence createGeofence() {
 
-        NOTIFICATION_MSG = "jiYkUaJMW6U";
 
         return new Geofence.Builder()
-                .setRequestId(GEOFENCE_REQ_ID)
+                .setRequestId("Akçaabat")
                 .setCircularRegion(41.022099, 39.570160, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
@@ -208,10 +211,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence2() {
 
-        NOTIFICATION_MSG = "t6hNicK_OdQ";
 
         return new Geofence.Builder()
-                .setRequestId(GEOFENCE_REQ_ID)
+                .setRequestId("Sürmene")
                 .setCircularRegion(40.911715, 40.118717, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
@@ -219,10 +221,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence3() {
 
-        NOTIFICATION_MSG = "yekyXM7tO34";
 
         return new Geofence.Builder()
-                .setRequestId(GEOFENCE_REQ_ID)
+                .setRequestId("Maçka")
                 .setCircularRegion(40.814207, 39.610737, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
@@ -230,10 +231,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence4() {
 
-        NOTIFICATION_MSG = "hneU6fj0V5M";
 
         return new Geofence.Builder()
-                .setRequestId(GEOFENCE_REQ_ID)
+                .setRequestId("Tonya")
                 .setCircularRegion(40.886064, 39.290843, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
@@ -241,11 +241,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
     private Geofence createGeofence5() {
 
-        NOTIFICATION_MSG = "pQsZ4homq-Q";
 
 
         return new Geofence.Builder()
-                .setRequestId("deneme")
+                .setRequestId("Hamsiköy")
                 .setCircularRegion(40.687377, 39.480178, GEOFENCE_RADIUS)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
@@ -253,6 +252,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
 
     }
+
 
     // Create a Geofence Request
 
@@ -264,6 +264,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 .addGeofence(geofence)
                 .build();
     }
+
+
+
+
 
     private PendingIntent geoFencePendingIntent;
     private static final int GEOFENCE_REQ_CODE = 0;

@@ -17,6 +17,7 @@ import android.util.Log;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofenceStatusCodes;
 import com.google.android.gms.location.GeofencingEvent;
+import com.google.android.gms.location.GeofencingRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +79,7 @@ public class GeofenceReciever extends BroadcastReceiver {
     }
 
 
+
     private String getGeofenceTrasitionDetails(int geoFenceTransition, List<Geofence> triggeringGeofences) {
         // get the ID of each geofence triggered
         ArrayList<String> triggeringGeofencesList = new ArrayList<>();
@@ -85,7 +87,11 @@ public class GeofenceReciever extends BroadcastReceiver {
             triggeringGeofencesList.add(geofence.getRequestId());
         }
 
-        String status = "Entering into Geofence";
+
+
+
+
+        String status = "";
         if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER)
             System.out.println(status);
         return status + TextUtils.join(", ", triggeringGeofencesList);
@@ -97,11 +103,14 @@ public class GeofenceReciever extends BroadcastReceiver {
     private void sendNotification(String msg) {
 
 
+
+
         Log.i(TAG, "sendNotification: " + msg);
 
         //burası bildirimin gideceği yeri belirliyor
         Intent notificationIntent = new Intent(contextBootReceiver, ActionBarDemoActivity.class);
-        notificationIntent.putExtra("gonder", MainActivity.NOTIFICATION_MSG);
+        notificationIntent.putExtra("location", msg);
+
 
 
 

@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -32,6 +33,7 @@ import com.google.android.youtube.player.YouTubePlayerFragment;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
 /**
  * A sample showing how to use the ActionBar as an overlay when the video is playing in fullscreen.
@@ -49,11 +51,33 @@ public class ActionBarDemoActivity extends YouTubeFailureRecoveryActivity implem
   private YouTubePlayerFragment playerFragment;
   private View tutorialTextView;
 
+    String oynat;
+
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.action_bar_demo);
+
+
+    Log.d("Yusuf", "onCreate: ");
+    if(getIntent().getExtras() != null){
+      String location = getIntent().getExtras().getString("location");
+      Log.d("Yusuf", "onCreate: location is "+location);
+
+        if (location.equals("Hamsiköy")) {
+            oynat="pQsZ4homq-Q";
+        } else if (location.equals("Maçka")) {
+            oynat="yekyXM7tO34";
+        } else if (location.equals("Tonya"))  {
+            oynat="hneU6fj0V5M";
+        } else if (location.equals("Akçaabat"))  {
+            oynat="jiYkUaJMW6U";
+        } else if (location.equals("Sürmene"))  {
+            oynat="t6hNicK_OdQ";
+        }
+    }
+
 
     viewContainer = (ActionBarPaddedFrameLayout) findViewById(R.id.view_container);
     playerFragment =
@@ -74,10 +98,8 @@ public class ActionBarDemoActivity extends YouTubeFailureRecoveryActivity implem
 
     if (!wasRestored) {
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra("gonder");
+        player.cueVideo(oynat);
 
-      player.cueVideo(message);
     }
   }
 
